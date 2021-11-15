@@ -1,0 +1,76 @@
+.App {
+  text-align: center;
+  background-color: #272526;
+}
+
+@font-face {
+  font-family: Chosky;
+  src: url("./font/Chomsky.otf");
+}
+
+#titulo {
+  color: white;
+  font-family: 'Chosky';
+  font-size: 52px;
+  height: 83px;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+a.nav-link {
+  color: white;
+  display: block;
+}
+
+a.nav-link:hover {
+  color: white;
+}
+
+a.nav-link:focus, .nav-link:hover {
+  color: #b6b6b6;
+}
+
+focus {
+  color: red;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+  color: white;
+  background-color: indianred;
+  border-color: #dee2e6 #dee2e6 #fff;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
