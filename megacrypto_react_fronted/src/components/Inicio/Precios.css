@@ -1,0 +1,68 @@
+.card-body {
+    flex: 1 1 auto;
+    padding: 1 rem 1 rem;
+    background-color: #272526;
+    color: white;
+}
+
+th {
+    color: white;
+}
+
+#cambioverde {
+    background-color: rgb(14, 203, 129);
+    color: white;
+    /*font-size: 16px;
+    height: 29px;*/
+    width: 1%;
+    border-radius: 5%;
+    border: none;
+    width: 10%;
+}
+
+#precioVerde {
+    color: rgb(14, 203, 129);
+    font-size: 16px;
+    width: 20%;
+    border: none;
+}
+
+#monedaBlanca {
+    color: white;
+    font-size: 16px;
+    width: 20%;
+    border: none;
+}
+
+#border, .table{
+    border: none;
+    
+}
+
+#precioRoja {
+    color: rgb(246, 70, 93);
+    font-size: 16px;
+    border: none;
+}
+
+#cambioRoja {
+    background-color: rgb(246, 70, 93);
+    color: white;
+    font-size: 16px;
+    height: 29px;
+    width: 20%;
+    border-radius: 5%;
+    border: none;
+}
+
+.card-group>.card:not(:last-child) .card-footer, .card-group>.card:not(:last-child) .card-img-bottom {
+    border-bottom-right-radius: 0;
+    background-color: #272526;
+    border: none;
+}
+
+.card-group>.card:not(:first-child) .card-footer, .card-group>.card:not(:first-child) .card-img-bottom {
+    border-bottom-left-radius: 0;
+    background-color: #272526;
+    border: none;
+}

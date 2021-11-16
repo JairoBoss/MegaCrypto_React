@@ -8,9 +8,6 @@ module.exports = (sequelize, Sequelize) => {
         },
         contraseña: {
             type: Sequelize.STRING
-        },
-        edad: {
-            type: Sequelize.SMALLINT
         }
     });
 

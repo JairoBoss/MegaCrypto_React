@@ -1,0 +1,35 @@
+#inputt:focus {
+    outline: none;
+    /*border: 1px solid rgb(248, 208, 47);*/
+}
+/*
+#inputt:hover {
+    /*border: 1px solid rgb(248, 208, 47);
+}
+*/
+#inputt:focus:hover {
+    outline: none;
+    /*border: 1px solid rgb(248, 208, 47);*/
+}
+
+#inputt {
+    border: 1px solid rgb(88, 87, 87);
+    box-sizing: border-box;
+    background-color: #272526;
+    color: white;
+    width: 100%;
+    height: 10%;
+    padding: 8px 4px;
+    
+}
+
+
+Form {
+    text-align: center;
+    background-color: #272526;
+    color: white;
+}
+
+#textoBien{
+    color: #B7BDC6;
+}

@@ -1,107 +1,119 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Navbar, Nav, Container, Carousel, Card, CardGroup, Button } from 'react-bootstrap';
+import { Link, Switch, BrowserRouter, Route } from 'react-router-dom';
+import { Nav, Carousel, CardGroup, Table } from 'react-bootstrap';
+import Inicio from './components/Inicio.component';
+import Diccionario from './components/Diccionario.component';
+import Videos from './components/Videos.component';
+import Login from './components/Login.component';
+import Registrate from './components/Registrate.component';
 
 function App() {
   return (
 
     <div className="App">
-      <a id="titulo">MegaCrypto</a>
+      <a id="titulo">
+        <Link id="links" to={"/"}>
+          MegaCrypto
+        </Link>
+      </a>
       <Nav fill variant="tabs" defaultActiveKey="/home">
         <Nav.Item>
-          <Nav.Link eventKey="link-1">Noticias</Nav.Link>
+          <Link id="links" to={"/"} className="nav-link">
+            Noticias
+          </Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link eventKey="link-2">Diccionario</Nav.Link>
-        </Nav.Item>
-
-        <Nav.Item>
-          <Nav.Link eventKey="link-3">Videos</Nav.Link>
-        </Nav.Item>
-
-        <Nav.Item>
-          <Nav.Link eventKey="link-4">Opiniones</Nav.Link>
+          <Link id="links" to={"/Diccionario"} className="nav-link">
+            Diccionario
+          </Link>
         </Nav.Item>
 
         <Nav.Item>
-          <Nav.Link eventKey="link-5">Acerca de</Nav.Link>
+
+          <Link id="links" to={"/Videos"} className="nav-link">
+            Videos
+          </Link>
+
+        </Nav.Item>
+
+        <Nav.Item>
+          <Link id="links" to={"/Login"} className="nav-link">
+            Login
+          </Link>
+        </Nav.Item>
+
+        <Nav.Item>
+          <Link id="links" to={"/Registrate"} className="nav-link">
+            Registrate
+          </Link>
         </Nav.Item>
 
 
       </Nav>
 
-      <Carousel fade>
 
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="https://wealth.buzz/wp-content/uploads/2021/08/shiba-inu-3.jpg"
-            alt="Second slide"
-          />
+      <div className="container mt-3">
+        <Switch>
+          <Route exact path={["/"]} component={Inicio} />
+          <Route exact path={["/Diccionario"]} component={Diccionario} />
+          <Route exact path={["/Videos"]} component={Videos} />
+          <Route exact path={["/Login"]} component={Login} />
+          <Route exact path={["/Registrate"]} component={Registrate} />
 
-          <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-
-      </Carousel>
-
-      <div>
-
+        </Switch>
       </div>
 
-      <footer id="footer">
+      <br />
 
+      <div id="footer">
+        <Table striped bordered hover>
+          <thead id="bordes">
+            <tr id="bordes">
+              <th id="bordesT">Links</th>
+              <th id="bordesT">Mi cuenta</th>
+              <th id="bordesT">Nosotros</th>
+            </tr>
+          </thead>
+          <thead id="bordes">
+            <tr id="bordes">
+              <td id="bordes">
+                <Link id="bordes" to={"/Diccionario"}>
+                  Diccionario
+                </Link>
+              </td>
+              <td id="bordes">
+                <Link id="bordes" to={"/Login"}>
+                  Login
+                </Link>
+              </td>
+              <td id="bordes"><a href="https://www.youtube.com/">YouTube</a></td>
+            </tr>
+            <tr id="bordes">
+              <td id="bordes">
+                <Link id="bordes" to={"/Videos"}>
+                  Videos
+                </Link>
+              </td>
+              <td id="bordes">
 
-        <center>
-          <table id="tablaFooter">
-            <tr>
-              <th>Links</th>
-              <th>Mi cuenta</th>
-              <th>Nosotros</th>
-            </tr>
-            <tr>
-              <td>
-                <center><a href="index.html">Noticias</a></center>
+                <Link id="bordes" to={"/Registrate"}>
+                  Registro
+                </Link>
               </td>
-              <td>
-                <center><a href="login.html">Login</a></center>
-              </td>
-              <td>
-                <center><a href="acercade.html">Acerca de</a></center>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <center><a href="diccionario.html">Diccionario</a></center>
-              </td>
-              <td>
-                <center><a href="registro.html">Registro</a></center>
-              </td>
-              <td>
-                <center><a href="https://github.com/JairoBoss">GitHub</a></center>
-              </td>
-
-            </tr>
-            <tr>
-              <td>
-                <center><a href="videos.html">Videos</a></center>
-              </td>
-              <td>
-                <center><a href="MiCuenta.html">Mi perfil</a></center>
-              </td>
-              <td>
-                <center><a href="https://www.youtube.com/">YouTube</a></center>
+              <td id="bordes">
+                <a href="https://github.com/JairoBoss">GitHub</a>
               </td>
             </tr>
-          </table>
-          <a id="nombreFooter" href="index.html">MegaCrypto</a>
-          <p id="fin">All rights reserved. ©</p>
-        </center>
 
-      </footer>
+          </thead>
 
+        </Table>
+      </div>
+
+      <a id="tituloFinal">MegaCrypto</a>
+      <br />
+      <a id="fin">All rights reserved. ©</a>
     </div >
   );
 }

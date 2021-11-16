@@ -16,8 +16,7 @@ exports.create = (req, res) => {
     const usuario = {
         usuario: req.body.usuario,
         correoElectronico: req.body.correoElectronico,
-        contraseña: req.body.contraseña,
-        edad: req.body.edad,
+        contraseña: req.body.contraseña
     };
 
     //Guardar nuevo usuario en la base de datos
