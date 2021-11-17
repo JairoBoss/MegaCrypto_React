@@ -5,10 +5,14 @@ const cors = require("cors"); //proporciona middleware Express para habilitar CO
 const app = express();
 // configuramos origin: http: // localhost: 9596.
 var corsOptions = {
-    origin: "http://localhost:9596"
+    origin: "http://localhost:9595"
 };
 //agregue cors middlewares usando el método app.use ()
-app.use(cors(corsOptions));
+//app.use(cors(corsOptions));
+
+app.use(bodyParser.json());
+
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use((req, res, next) => {
 
@@ -23,6 +27,10 @@ app.use((req, res, next) => {
     next();
 
 });
+
+app.use(express.json());
+
+app.use(express.urlencoded({ extended: false }));
 
 // realizar parse de content-type - application/json de requests
 app.use(bodyParser.json());

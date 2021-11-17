@@ -3,6 +3,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./Login/Login.css"
 import { Card, Container, Button, Form } from 'react-bootstrap';
 import UsuarioService from "../services/usuario.service";
+import Swal from 'sweetalert2'
+//var ReverseMd5 = require('reverse-md5')
+
 
 export default class Login extends Component {
 
@@ -33,39 +36,44 @@ export default class Login extends Component {
     }
 
     iniciar() {
+
+
         if (this.state.correo != "" && this.state.contraseña != "") {
+
             let x = [];
             let encontrado = false;
             let contraseñaMala = false;
 
-            UsuarioService.findByNombre("esteba")
+            UsuarioService.findByNombre("a")
                 .then(response => {
 
                     //alert(JSON.stringify(response.data));
                     x = response.data;
 
-
-
                     x.forEach(element => {
 
-                        if (element['usuario'] == this.state.correo) {
-                            console.log("Usuario existente")
-                            console.log(element['contraseña'])
+                        if (element['correoElectronico'] == this.state.correo) {
+
                             encontrado = true;
                             if (element['contraseña'] == this.state.contraseña) {
-                                alert("User logeado")
                                 contraseñaMala = true;
+                                Swal.fire(
+                                    'Bienvenido!',
+                                    'Inicio de sesion con exito, bienvenido ' + element['usuario'] + "!",
+                                    'success'
+                                )
                             }
                         }
                     });
 
-                    if (!encontrado) {
-                        alert("Usuario no encontrado")
-                        contraseñaMala = true;
+                    if (!encontrado || !contraseñaMala) {
+                        Swal.fire(
+                            '¿Hola?',
+                            'Revisa que tu correo o contraseña sean correctos',
+                            'question'
+                        )
                     }
-                    if (!contraseñaMala) {
-                        alert("Contraseña incorrecta")
-                    }
+
 
 
 
@@ -74,9 +82,19 @@ export default class Login extends Component {
                 });
         } else {
             if (this.state.correo == "") {
-                alert("Ingresa un correo pls")
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'Ingresa tu correo',
+                    icon: 'error',
+                    confirmButtonText: 'Aceptar'
+                })
             } else {
-                alert("Ingresa tu contraseña pls")
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'Ingresa tu contraseña',
+                    icon: 'error',
+                    confirmButtonText: 'Aceptar'
+                })
             }
         }
     }
@@ -89,7 +107,7 @@ export default class Login extends Component {
                 <p id="textoBien">¡Hola de nuevo! Inicia sesión con tu correo electrónico</p>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label style={{ float: 'left' }}>Correo</Form.Label>
-                    <Form.Control
+                    <input
                         id="inputt"
                         type="text"
                         placeholder="Tu correo electronico"
@@ -100,7 +118,7 @@ export default class Login extends Component {
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label style={{ float: 'left' }}>Contraseña</Form.Label>
-                    <Form.Control
+                    <input
                         id="inputt"
                         type="password"
                         placeholder="Contraseña"
