@@ -1,12 +1,13 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link, Switch, BrowserRouter, Route } from 'react-router-dom';
-import { Nav, Carousel, CardGroup, Table } from 'react-bootstrap';
+import { Nav, Carousel, CardGroup, Table, Container } from 'react-bootstrap';
 import Inicio from './components/Inicio.component';
 import Diccionario from './components/Diccionario.component';
 import Videos from './components/Videos.component';
 import Login from './components/Login.component';
 import Registrate from './components/Registrate.component';
+import Contacto from './components/contacto.component';
 
 function App() {
   return (
@@ -49,6 +50,12 @@ function App() {
           </Link>
         </Nav.Item>
 
+        <Nav.Item>
+          <Link id="links" to={"/Contacto"} className="nav-link">
+            Acerca de
+          </Link>
+        </Nav.Item>
+
 
       </Nav>
 
@@ -60,6 +67,7 @@ function App() {
           <Route exact path={["/Videos"]} component={Videos} />
           <Route exact path={["/Login"]} component={Login} />
           <Route exact path={["/Registrate"]} component={Registrate} />
+          <Route exact path={["/Contacto"]} component={Contacto} />
 
         </Switch>
       </div>

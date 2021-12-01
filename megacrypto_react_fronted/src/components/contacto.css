@@ -1,0 +1,63 @@
+#inputt:focus {
+    outline: none;
+    border: 1px solid rgb(248, 208, 47);
+}
+
+#inputt:hover {
+    border: 1px solid rgb(248, 208, 47);
+}
+
+#inputt:focus:hover {
+    outline: none;
+    border: 1px solid rgb(248, 208, 47);
+}
+
+#inputt {
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: #272526;
+    color: white;
+    width: 50%;
+    
+    padding: 8px 4px;
+    font-size: 17px;
+}
+
+#inputtt:focus {
+    outline: none;
+    border: 1px solid rgb(248, 208, 47);
+}
+
+#inputtt:hover {
+    border: 1px solid rgb(248, 208, 47);
+}
+
+#inputtt:focus:hover {
+    outline: none;
+    border: 1px solid rgb(248, 208, 47);
+}
+
+#inputtt {
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: #272526;
+    color: white;
+    width: 50%;
+    height: 1%;
+    padding: 8px 4px;
+    font-size: 17px;
+}
+
+#boton {
+    background-color: rgb(248, 208, 47);
+    color: rgb(33, 40, 51);
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 55%;
+}
+
+#boton:hover {
+    opacity: 0.9;
+}
